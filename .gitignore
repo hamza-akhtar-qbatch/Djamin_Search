@@ -1,0 +1,19 @@
+# secrets - never commit
+.env
+web/.env.local
+
+# dependencies & build output
+node_modules/
+.next/
+*.tsbuildinfo
+
+# downloaded audio (regenerable via enrich.py / add_track.py; rights-sensitive)
+audio_cache/
+web/public/test_audio/
+
+# logs & transient
+*.log
+search_log.jsonl
+web/search_log.jsonl
+djaminn_demo_portable.zip
+.DS_Store
