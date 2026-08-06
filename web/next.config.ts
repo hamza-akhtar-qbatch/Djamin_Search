@@ -10,6 +10,16 @@ const nextConfig: NextConfig = {
     "*.ngrok-free.dev",
     "*.ngrok.io",
   ],
+
+  // the search/intro/stats routes read data/index.json via fs at request
+  // time; Next's build-time file tracer usually infers this on its own,
+  // but pinning it explicitly guarantees the data file ships with the
+  // serverless bundle on Vercel/other providers that trace per-route
+  outputFileTracingIncludes: {
+    "/api/search": ["./data/index.json"],
+    "/api/intro": ["./data/index.json"],
+    "/api/stats": ["./data/index.json"],
+  },
 };
 
 export default nextConfig;
