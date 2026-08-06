@@ -7,9 +7,10 @@ node_modules/
 .next/
 *.tsbuildinfo
 
-# downloaded audio (regenerable via enrich.py / add_track.py; rights-sensitive)
+# downloaded audio for the raw enrichment cache — regenerable via enrich.py,
+# not needed at runtime (web/public/test_audio/ IS committed: those two
+# reference-track MP3s are served by the deployed app)
 audio_cache/
-web/public/test_audio/
 
 # logs & transient
 *.log
