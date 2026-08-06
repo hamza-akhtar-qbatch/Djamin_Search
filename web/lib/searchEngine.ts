@@ -911,7 +911,7 @@ export async function search(
     plan,
     results,
     artists,
-    note: degradedNote,
+    note: [aspectsNote, degradedNote].filter(Boolean).join(" ") || undefined,
     timings: { planMs: t1 - t0, retrievalMs: t2 - t1, totalMs: Date.now() - t0 },
   };
 }
